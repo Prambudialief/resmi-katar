@@ -1,0 +1,300 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background: #FFF7F1;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #00101D;
+    z-index: 100;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar{
+    justify-content: space-between;
+}
+
+.nav-links{
+    gap: 20px;
+    list-style: none;
+
+}
+
+.navbar a{
+    padding: 20px 0;
+    display: inline-block;
+    color: whitesmoke;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.5s;
+}
+
+.navbar a:hover{
+    color: #B99470;
+    text-decoration: underline;
+}
+
+/* Homepage */
+.homepage{
+    position: relative;
+    height: 100vmax;
+    width: 100%;
+    background: url("katar06.png");
+    background-position: center;
+    background-size: cover;
+
+}
+
+.homepage::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.homepage .content{
+    position: relative;
+    height: 85%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.homepage .text{
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.homepage .text h1{
+    font-size: 60px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.homepage a{
+    color: black;
+    text-decoration: none;
+    background: whitesmoke;
+    margin-top: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #F4EAE0;
+    box-shadow: #040D12;
+    font-size: 15px;
+    transition: 0.4s;
+
+}
+
+.homepage a:hover{
+    color: white;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* about */
+section{
+    padding-top: 80px;
+}
+
+.section-title{
+    text-align: center;
+}
+
+section h2{
+    font-size: 2rem;
+}
+
+section .cards{
+    margin-top: 50px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+section .card{
+    width: calc(100% / 3 - 30px);
+    text-align: center;
+    list-style: none;
+    background-color: #fff;
+    padding: 40px 15px;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+}
+
+section .card img{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+section .card p{
+    margin-top: 5px;
+
+}
+/*activity*/
+.activity .card{
+    padding: 0 0 20px;
+
+}
+.activity .card img{
+    height: 240px;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    
+}
+
+/*contact*/
+.contact .row{
+    justify-content: space-between;
+    margin: 60px 0 90px;
+}
+
+.contact .row .col{
+    padding: 0 10px;
+    width: calc(100% / 2 - 50px);
+}
+
+.contact .row .col p{
+    color: #7a7a7a;
+    margin-bottom: 10px;
+}
+
+.contact .row .col p i{
+    margin-right: 10px;
+}
+
+.contact .row .col p a{
+    color: #7a7a7a;
+    text-decoration: underline;
+}
+
+.contact form input{
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    outline: none;
+}
+
+.contact form textarea{
+    padding: 15px;
+    width: 100%;
+    height: 150px;
+    outline: none;
+    resize: none;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.contact form button{
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: white;
+    margin-top: 10px;
+    border: none;
+    background: #00101D;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact form button:hover{
+    background: rgb(181, 163, 128);
+}
+
+/*footer*/
+.footer {
+    background:#00101D;
+    padding: 20px 0;
+}
+
+.footer span{
+    color: white;
+}
+#menu-toggler, #hamburger-btn{
+    display: none;
+}
+/*responsive*/
+@media (width < 860px){
+    .navbar .nav-links{
+        position: fixed;
+        top: 65px;
+        height: 100%;
+        display: block;
+        background: #00101D;
+        width: 300px;
+        padding-left: 20px;
+        padding-top: 30px;
+        right: -100%;
+        transition: all 0.4s ease;
+    }
+    #menu-toggler:checked ~ .nav-links{
+        right: 0;
+    }
+    .nav-links li{
+        font-size: 18px;
+    
+    }
+    
+    #hamburger-btn{
+        display: block;
+        color: white;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    section .cards .card{
+        width: calc(100% / 2 - 15px);
+    }
+    .contact .row{
+        flex-direction: column;
+    }
+    .contact .row .col{
+       width: 100%;
+    }
+    .contact .row .col:last-child{
+        margin-top: 40px;
+    }
+}
+
+@media (width < 560px) {
+    section .cards .card{
+        width: 100%;
+    }
+    .homepage .text h1{
+        font-size: 30px;
+    }
+    section h2{
+        font-size: 1.5rem;
+    }
+}
